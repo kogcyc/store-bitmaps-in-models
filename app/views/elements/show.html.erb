@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bitmap:</b>
+  <%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => @element.id) %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @element.caption %>
+</p>
+
+
+<%= link_to 'Edit', edit_element_path(@element) %> |
+<%= link_to 'Back', elements_path %>

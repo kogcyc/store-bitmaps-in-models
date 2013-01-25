@@ -1,0 +1,29 @@
+<%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
+  <% if @element.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@element.errors.count, "error") %> prohibited this element from being saved:</h2>
+
+      <ul>
+      <% @element.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @element.id %>
+    <%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => @element.id) %>
+  <% end %>
+
+  <div class="field">
+      <%= f.label :bitmap %><br />
+      <%= file_field 'upload', 'datafile' %>
+  </div> 
+  <div class="field">
+    <%= f.label :caption %><br />
+    <%= f.text_field :caption %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
