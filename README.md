@@ -12,9 +12,9 @@ No, you don't want to store blobs in models.  But if you did...
 
 ####2) routes.rb
 
-    ```ruby
+```ruby
     match 'elements/show_bitmap/:id' => 'elements#show_bitmap'
-    ```
+```
 
 ####3) elements_controller.rb
 
@@ -44,40 +44,40 @@ No, you don't want to store blobs in models.  But if you did...
 ####4) _form.html.erb    
 
 ```ruby
-<%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
-.
-. 
-.
-<% if @element.id %>
-  <%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => @element.id) %>
-<% end %>
+    <%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
+    .
+    . 
+    .
+    <% if @element.id %>
+      <%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => @element.id) %>
+    <% end %>
 
-<div class="field">
-  <%= f.label :bitmap %><br />
-  <%= file_field 'upload', 'datafile' %>
-</div>
+    <div class="field">
+      <%= f.label :bitmap %><br />
+      <%= file_field 'upload', 'datafile' %>
+    </div>
 ```
 
 ####5) index.html.erc
 
-    ```ruby
+```ruby
     <td><%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => element.id) %></td>
-    ```
+```
 
 ####6) show.html.erc
 
-    ```ruby
+```ruby
     <p>
       <b>Bitmap:</b>
       <%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => @element.id) %>
     </p>
-    ```
+```
 
 ####7) elements.css.scss
 
-    ```css
+```css
     img {
       max-width: 200px;
     }
-    ```
+```
 
