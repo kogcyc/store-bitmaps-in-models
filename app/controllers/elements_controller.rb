@@ -43,6 +43,7 @@ class ElementsController < ApplicationController
   def create
     @element = Element.new(params[:element])
     @element.bitmap = params[:upload][:datafile].read
+    @element.bitmap = "\x89PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00(\x00\x00\x00(\x01\x03\x00\x00\x00\xB60*.\x00\x00\x00\x03PLTE\x01\xA8\xB3\x92\x0E\x83:\x00\x00\x00\tpHYs\x00\x00\v\x13\x00\x00\v\x13\x01\x00\x9A\x9C\x18\x00\x00\x00\fIDAT\b\xD7c`\x18Y\x00\x00\x00\xF0\x00\x01\xD7\xB7\x96\xA2\x00\x00\x00\x19tEXtComment\x00Created with GIMPW\x81\x0E\x17\x00\x00\x00%tEXtdate:create\x002013-01-24T20:31:30-08:00\x9E\xC2\xAB\x14\x00\x00\x00%tEXtdate:modify\x002013-01-24T20:31:30-08:00\xEF\x9F\x13\xA8\x00\x00\x00\x00IEND\xAEB`\x82"
     # params[:upload][:datafile].original_filename    # its file name on the client
     # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
 
@@ -62,6 +63,7 @@ class ElementsController < ApplicationController
   def update
     @element = Element.find(params[:id])
     @element.bitmap = params[:upload][:datafile].read
+    @element.bitmap = "\x89PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00(\x00\x00\x00(\x01\x03\x00\x00\x00\xB60*.\x00\x00\x00\x03PLTE\x01\xA8\xB3\x92\x0E\x83:\x00\x00\x00\tpHYs\x00\x00\v\x13\x00\x00\v\x13\x01\x00\x9A\x9C\x18\x00\x00\x00\fIDAT\b\xD7c`\x18Y\x00\x00\x00\xF0\x00\x01\xD7\xB7\x96\xA2\x00\x00\x00\x19tEXtComment\x00Created with GIMPW\x81\x0E\x17\x00\x00\x00%tEXtdate:create\x002013-01-24T20:31:30-08:00\x9E\xC2\xAB\x14\x00\x00\x00%tEXtdate:modify\x002013-01-24T20:31:30-08:00\xEF\x9F\x13\xA8\x00\x00\x00\x00IEND\xAEB`\x82"
     # params[:upload][:datafile].original_filename    # its file name on the client
     # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
 
