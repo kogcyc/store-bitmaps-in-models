@@ -1,7 +1,7 @@
 How To Store Bitmaps In Models
 =========
 
-No, you don't want to store blobs in models.  But if you did...
+No, you ***do not*** want to store blobs in models.  But if you did...
 
 ####1) Assume this opening:
 
