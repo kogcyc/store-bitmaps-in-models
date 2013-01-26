@@ -45,7 +45,21 @@ end
 
 ####4) _form.html.erb    
 
+```javascript
+<script>
+$(function() {
+   $('form').submit(function() {
+      if(!$("form input[type=file]").val()) {
+         alert('You must select a file!');
+         return false;
+      }
+   });
+});
+</script>
+```javascript
+
 ```ruby
+<%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
 <%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
 .
 . 
