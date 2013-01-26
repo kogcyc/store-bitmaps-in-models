@@ -45,7 +45,7 @@ end
 
 ####4) _form.html.erb    
 
-```javascript
+```ruby
 <script>
 $(function() {
    $('form').submit(function() {
@@ -55,11 +55,6 @@ $(function() {
       }
    });
 });
-</script>
-```
-
-```ruby
-<%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
 <%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
 .
 . 
