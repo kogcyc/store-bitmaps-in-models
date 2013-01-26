@@ -55,6 +55,8 @@ $(function() {
       }
    });
 });
+</script>
+
 <%= form_for(@element, :html => {:multipart => true, :accept => "image/*; capture=camera"}) do |f| %>
 .
 . 
