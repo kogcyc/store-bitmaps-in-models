@@ -17,7 +17,7 @@
 
   <div class="field">
       <%= f.label :bitmap %><br />
-      <%= file_field_tag 'bitmap' %>
+      <%= file_field_tag 'anything' %>
   </div> 
   <div class="field">
     <%= f.label :caption %><br />

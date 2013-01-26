@@ -42,7 +42,7 @@ class ElementsController < ApplicationController
   # POST /elements.json
   def create
     @element = Element.new(params[:element])
-    @element.bitmap = params[:bitmap].read
+    @element.bitmap = params[:anything].read
     # params[:upload][:datafile].original_filename    # its file name on the client
     # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
 
@@ -61,7 +61,7 @@ class ElementsController < ApplicationController
   # PUT /elements/1.json
   def update
     @element = Element.find(params[:id])
-    @element.bitmap = params[:bitmap].read
+    @element.bitmap = params[:anything].read
     # params[:upload][:datafile].original_filename    # its file name on the client
     # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
 
