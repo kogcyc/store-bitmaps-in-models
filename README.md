@@ -71,13 +71,13 @@ $(function() {
 </div>
 ```
 
-####5) index.html.erc
+####5) index.html.erb
 
 ```ruby
 <td><%= image_tag url_for(:controller => "elements", :action => "show_bitmap", :id => element.id) %></td>
 ```
 
-####6) show.html.erc
+####6) show.html.erb
 
 ```ruby
 <p>
