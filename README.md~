@@ -24,16 +24,16 @@ match 'elements/show_bitmap/:id' => 'elements#show_bitmap'
 def create
   @element = Element.new(params[:element])
   @element.bitmap = params[:upload][:datafile].read
-  # params[:upload][:datafile].original_filename 
-  # params[:upload][:datafile].content_type.chomp # like "image/png"
+  # params[:bitmap].original_filename 
+  # params[:bitmap].content_type.chomp # like "image/png"
 .
 .
 .
 def update
   @element = Element.find(params[:id])
   @element.bitmap = params[:upload][:datafile].read
-  # params[:upload][:datafile].original_filename 
-  # params[:upload][:datafile].content_type.chomp # like "image/png"
+  # params[:bitmap].original_filename 
+  # params[:bitmap].content_type.chomp # like "image/png"
 .
 .
 .
@@ -56,7 +56,7 @@ end
 
 <div class="field">
   <%= f.label :bitmap %><br />
-  <%= file_field 'upload', 'datafile' %>
+  <%= file_field_tag 'bitmap' %>
 </div>
 ```
 

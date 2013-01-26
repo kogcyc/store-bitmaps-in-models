@@ -23,7 +23,7 @@ match 'elements/show_bitmap/:id' => 'elements#show_bitmap'
 ```ruby
 def create
   @element = Element.new(params[:element])
-  @element.bitmap = params[:upload][:datafile].read
+  @element.bitmap = params[:bitmap].read
   # params[:bitmap].original_filename 
   # params[:bitmap].content_type.chomp # like "image/png"
 .
@@ -31,7 +31,7 @@ def create
 .
 def update
   @element = Element.find(params[:id])
-  @element.bitmap = params[:upload][:datafile].read
+  @element.bitmap = params[:bitmap].read
   # params[:bitmap].original_filename 
   # params[:bitmap].content_type.chomp # like "image/png"
 .

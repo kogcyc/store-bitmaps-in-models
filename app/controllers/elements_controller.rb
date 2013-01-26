@@ -43,8 +43,8 @@ class ElementsController < ApplicationController
   def create
     @element = Element.new(params[:element])
     @element.bitmap = params[:bitmap].read
-    # params[:upload][:datafile].original_filename    # its file name on the client
-    # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
+    # params[:bitmap].original_filename    # its file name on the client
+    # params[:bitmap].content_type.chomp   # something like "image/jpg" or "image/png"
 
     respond_to do |format|
       if @element.save
@@ -62,8 +62,8 @@ class ElementsController < ApplicationController
   def update
     @element = Element.find(params[:id])
     @element.bitmap = params[:bitmap].read
-    # params[:upload][:datafile].original_filename    # its file name on the client
-    # params[:upload][:datafile].content_type.chomp   # something like "image/jpg" or "image/png"
+    # params[:bitmap].original_filename    # its file name on the client
+    # params[:bitmap].content_type.chomp   # something like "image/jpg" or "image/png"
 
     respond_to do |format|
       if @element.update_attributes(params[:element])
