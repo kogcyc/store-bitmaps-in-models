@@ -100,4 +100,4 @@ class Element < ActiveRecord::Base
   validates :bitmap, :presence => true
   validates :caption, :presence => true
 end
-...
+```
