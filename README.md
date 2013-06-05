@@ -87,10 +87,17 @@ $(function() {
 ```
 
 ####7) elements.css.scss
-
 ```css
 img {
   max-width: 200px;
 }
 ```
 
+####8) element.rb
+```ruby
+class Element < ActiveRecord::Base
+  attr_accessible :bitmap, :caption
+  validates :bitmap, :presence => true
+  validates :caption, :presence => true
+end
+...
